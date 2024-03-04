@@ -57,7 +57,7 @@ function Login() {
   const handleForgotPassword = async () => {
     try {
       await sendPasswordResetEmail(auth, email);
-      setAlertMessage("Your reset pin has been sent to the respective mail id");
+      alert("Your reset pin has been sent to the respective mail id");
     } catch (error) {
       console.error("Error sending password, enter the correct email:", error);
       toast.error(error.message);

@@ -27,15 +27,32 @@ function Profile() {
   };
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <Header />
       {user.profilePic && (
-        <img src={user.profilePic} alt="Profile Picture" style={{ width: "150px", borderRadius: "50%" }} />
+        <img
+          src={user.profilePic}
+          alt="Profile Picture"
+          style={{
+            width: "150px",
+            height: "150px",
+            borderRadius: "50%",
+            marginBottom: "20px",
+          }}
+        />
       )}
-      <h1>{user.name}</h1>
-      <h1>{user.email}</h1>
-      <h1>{user.uid}</h1>
-      <Button text={"Logout"} onClick={handleLogout} />
+      <div style={{ marginTop: "50px" }}>
+      <h1>{"User Name: "}{user.name}</h1>
+      <h1>{"User Mail: "}{user.email}</h1>
+      <h1>{"User ID: "}{user.uid}</h1>
+      </div>
+      <div style={{ marginTop: "40px", marginLeft:"140px" }}>
+        <Button
+          text={"Logout"}
+          onClick={handleLogout}
+          style={{ margin: "0 auto", textAlign:"center" }}
+        />
+      </div>
     </div>
   );
 }
